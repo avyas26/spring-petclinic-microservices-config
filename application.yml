@@ -83,6 +83,15 @@ spring:
     client:
       serviceUrl:
         defaultZone: http://discovery-server:8761/eureka/
+  datasource:
+    url: jdbc:mysql://mysql-service:3306/petclinic?allowPublicKeyRetrieval=true&useSSL=false
+    username: petclinic
+    password: petclinic
+  sql:
+    init:
+      schema-locations: classpath*:db/mysql/schema.sql
+      data-locations: classpath*:db/mysql/data.sql
+      mode: ALWAYS
 ---
 spring:
   config:
